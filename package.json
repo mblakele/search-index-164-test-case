@@ -1,0 +1,15 @@
+{
+  "name": "search-index-stress",
+  "version": "1.0.0",
+  "description": "stress test",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js | bunyan -o short"
+  },
+  "author": "Michael Blakeley <mike@blakeley.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bunyan": "^1.5.1",
+    "search-index": "^0.6.13"
+  }
+}
