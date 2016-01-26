@@ -22,24 +22,24 @@ var FATAL;
 var testData = fs.readFileSync('test.txt', {encoding: 'utf8'});
 
 function loop() {
-    if (FATAL) {
-        console.error(FATAL);
-        return;
-    }
+  if (FATAL) {
+    console.error(FATAL);
+    return;
+  }
 
-    console.log(COUNT);
-    si.tellMeAboutMySearchIndex(function(result) {
-        console.log(result);
-    });
+  console.log(COUNT);
+  si.tellMeAboutMySearchIndex(function(err, result) {
+    console.log(result);
     si.add(
-        [{id: 'test-001', body: testData}],
-        {batchName: 'test-batch'},
-        function(err) {
-            if (err) { console.error(err); }
-            FATAL = err;
-            COUNT++;
-        });
-    setTimeout(loop, 0);
+      [{id: 'test-001', body: testData}],
+      {batchName: 'test-batch'},
+      function(err) {
+        if (err) { console.error(err); }
+        FATAL = err;
+        COUNT++;
+        setTimeout(loop, 0);
+      });
+  });
 }
 
 loop();
