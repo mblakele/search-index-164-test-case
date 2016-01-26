@@ -10,6 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "bunyan": "^1.5.1",
-    "search-index": "^0.6.13"
+    "search-index": "^0.6.15"
   }
 }
